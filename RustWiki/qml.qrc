@@ -1,5 +1,7 @@
 <RCC>
     <qresource prefix="/">
         <file>main.qml</file>
+        <file>icons/menu.png</file>
+        <file>pages/WeaponsPage.qml</file>
     </qresource>
 </RCC>

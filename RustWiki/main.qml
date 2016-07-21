@@ -6,17 +6,18 @@ import Qt.labs.folderlistmodel 2.1
 import QtQuick.Layouts 1.1
 
 
-Window {
+ApplicationWindow {
+    id: window
     visible: true
-    width: 640
-    height: 480
-    title: qsTr("Hello World")
-
-    ToolBar {
+    width: 380
+    height: 570
+    title: qsTr("Rust Wiki")
+    header: ToolBar {
         width: parent.width
         ToolButton {
+            onClicked: drawer.open()
             Image {
-                source: "./menu.png"
+                source: "./icons/menu.png"
                 width: parent.width/1.2
                 height: parent.height/1.2
                 anchors.horizontalCenter: parent.horizontalCenter
@@ -26,19 +27,43 @@ Window {
     }
     Drawer {
         id: drawer
-        width: 250
-        height: parent.height
-        position: 0
+        width: Math.min(window.width, window.height) / 3 * 2
+        height: window.height
         ListView {
-            width: parent.width
-            height: parent.height
-            model: ["Weapons", "Items", "Building", "Environment", "Mechanics", "Guides"]
+            id: listView
+            currentIndex: -1
+            anchors.fill: parent
             delegate: ItemDelegate {
-                text: modelData
                 width: parent.width
-                onClicked: console.log("clicked:", modelData)
+                text: model.title
+                onClicked: {
+                    drawer.close();
+                    stackView.replace(model.source)
+                }
+                highlighted: ListView.isCurrentItem
+            }
+            model: ListModel {
+                ListElement { title: "Weapons"; source: "qrc:/pages/WeaponsPage.qml" }
+                ListElement { title: "Items"; source: "qrc:/pages/ButtonPage.qml" }
+                ListElement { title: "Building"; source: "qrc:/pages/CheckBoxPage.qml" }
+                ListElement { title: "Environment"; source: "qrc:/pages/ComboBoxPage.qml" }
+                ListElement { title: "Mechanics"; source: "qrc:/pages/DialPage.qml" }
             }
             ScrollIndicator.vertical: ScrollIndicator { }
+        }
+    }
+    StackView {
+        id: stackView
+        anchors.fill: parent
+        initialItem: Pane {
+            id: pane
+            Label {
+                text: "Welcome in Rust Wiki application, I hope you will enjoy :D Remember to give us feed back"
+                horizontalAlignment: Label.AlignHCenter
+                verticalAlignment: Label.AlignVCenter
+                wrapMode: Label.Wrap
+                width: parent.width
+            }
         }
     }
 }
