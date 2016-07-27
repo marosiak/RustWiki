@@ -10,5 +10,7 @@
         <file>json/quotes.txt</file>
         <file>icons/HuntingBow.png</file>
         <file>components/DataDelegate.qml</file>
+        <file>icons/missing.png</file>
+        <file>components/DamageDataDelegate.qml</file>
     </qresource>
 </RCC>

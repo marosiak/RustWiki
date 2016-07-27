@@ -16,7 +16,8 @@ include(deployment.pri)
 DISTFILES += \
     pages/WeaponsPage.qml \
     pages/DataPage.qml \
-    components/DataDelegate.qml
+    components/DataDelegate.qml \
+    components/DamageDataDelegate.qml
 
 HEADERS += \
     class/data.h

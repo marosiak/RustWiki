@@ -16,11 +16,19 @@ ApplicationWindow {
     title: qsTr("Rust Wiki")
     Item {
         id: mainData
-        property string image_: "IDK"
         property string name_: "Example"
+        property string image_: "../icons/missing.png"
         property string type_: "Example"
         property string firemode_: "Example"
+        property string damage_head_: "Example"
+        property string damage_chest_: "Example"
+        property string damage_arms_: "Example"
+        property string damage_legs_: "Example"
+        property string recoil_: "Example"
         property string range_: "Example"
+        property string ammo_: "Example"
+        property string level_: "Example"
+        property string expcost_: "Example"
         property string ingradients_: "Example"
     }
     Component.onCompleted: {Data.assignData();
@@ -78,27 +86,6 @@ ApplicationWindow {
                 verticalAlignment: Label.AlignVCenter
                 wrapMode: Label.Wrap
                 width: parent.width
-            }
-            Column {
-                width: parent.width
-                height: 200
-                spacing: 0
-                y: 300;
-            DataDelegate {
-                width: parent.width; height: 50
-                text1: "Type:"
-                text2: "Ranged Weapons"
-            }
-            DataDelegate {
-                width: parent.width; height: 50
-                text1: "Type:"
-                text2: "Ranged Weapons"
-            }
-            DataDelegate {
-                width: parent.width; height: 50
-                text1: "Type:"
-                text2: "Ranged Weapons"
-            }
             }
         }
     }

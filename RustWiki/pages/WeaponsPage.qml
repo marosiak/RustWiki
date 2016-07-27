@@ -31,8 +31,20 @@ Pane {
                 width: parent.width
                 onClicked: {
                     stackView.replace("qrc:/pages/DataPage.qml")
+                    mainData.name_ = model.name
+                    mainData.image_ = model.image
+                    mainData.type_ = model.type
+                    mainData.firemode_ = model.firemode
+                    mainData.damage_head_ = model.damage_head
+                    mainData.damage_chest_ = model.damage_chest
+                    mainData.damage_arms_ = model.damage_arms
+                    mainData.damage_legs_ = model.damage_legs
+                    mainData.recoil_ = model.recoil
+                    mainData.range_ = model.range
+                    mainData.ammo_ = model.ammo
+                    mainData.level_ = model.level
+                    mainData.expcost_ = model.expcost
                     mainData.ingradients_ = model.ingradients
-                    mainData.image_ = model.image;
                 }
             }
 

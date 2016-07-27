@@ -51,7 +51,10 @@ OBJECTS       = debug/main.o \
 		debug/qrc_qml.o \
 		debug/moc_data.o
 
-DIST          = pages/WeaponsPage.qml ..\RustWiki\class\data.h ..\RustWiki\main.cpp \
+DIST          = pages/WeaponsPage.qml \
+		pages/DataPage.qml \
+		components/DataDelegate.qml \
+		components/DamageDataDelegate.qml ..\RustWiki\class\data.h ..\RustWiki\main.cpp \
 		..\RustWiki\class\data.cpp
 QMAKE_TARGET  = RustWiki
 DESTDIR        = debug\ #avoid trailing-slash linebreak
@@ -98,7 +101,16 @@ compiler_rcc_clean:
 debug/qrc_qml.cpp: ../RustWiki/qml.qrc \
 		../../../Qt/5.7/mingw53_32/bin/rcc.exe \
 		../RustWiki/main.qml \
-		../RustWiki/icons/menu.png
+		../RustWiki/components/DataDelegate.qml \
+		../RustWiki/json/gunsList.txt \
+		../RustWiki/json/JSONListModel.qml \
+		../RustWiki/json/jsonpath.js \
+		../RustWiki/json/quotes.txt \
+		../RustWiki/icons/missing.png \
+		../RustWiki/icons/menu.png \
+		../RustWiki/icons/HuntingBow.png \
+		../RustWiki/pages/WeaponsPage.qml \
+		../RustWiki/pages/DataPage.qml
 	C:\Qt\5.7\mingw53_32\bin\rcc.exe -name qml ..\RustWiki\qml.qrc -o debug\qrc_qml.cpp
 
 compiler_moc_header_make_all: debug/moc_data.cpp

@@ -12,9 +12,9 @@
         "ammo": "Arrow / HV Arrow",
         "level": "7",
         "expcost": "5 XP",
-        "ingradients": "200x wood \n50x cloth"
+        "ingradients": "200x wood, 50x cloth"
         },
-     {"name": "Crossbow", "image": "ex.jpg",
+     {"name": "Crossbow", "image": "../icons/missing.png",
         "type": "Ranged Weapon",
         "firemode": "Single Fire",
         "damage_head": "102 - 121",
@@ -26,7 +26,7 @@
         "ammo": "Arrow / HV Arrow",
         "level": "10",
         "expcost": "8 XP",
-        "ingradients": "350x wood \n25x cloth\n75x Metal fragments"
+        "ingradients": "350x wood, 25x cloth, 75x Metal fragments"
         }
     ],
     "rifles":[
