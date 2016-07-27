@@ -3,5 +3,12 @@
         <file>main.qml</file>
         <file>icons/menu.png</file>
         <file>pages/WeaponsPage.qml</file>
+        <file>pages/DataPage.qml</file>
+        <file>json/gunsList.txt</file>
+        <file>json/JSONListModel.qml</file>
+        <file>json/jsonpath.js</file>
+        <file>json/quotes.txt</file>
+        <file>icons/HuntingBow.png</file>
+        <file>components/DataDelegate.qml</file>
     </qresource>
 </RCC>

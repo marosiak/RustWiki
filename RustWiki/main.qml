@@ -4,6 +4,8 @@ import QtQuick.Controls.Material 2.0
 import QtQuick.Window 2.2
 import Qt.labs.folderlistmodel 2.1
 import QtQuick.Layouts 1.1
+import "json"
+import "components"
 
 
 ApplicationWindow {
@@ -12,6 +14,18 @@ ApplicationWindow {
     width: 380
     height: 570
     title: qsTr("Rust Wiki")
+    Item {
+        id: mainData
+        property string image_: "IDK"
+        property string name_: "Example"
+        property string type_: "Example"
+        property string firemode_: "Example"
+        property string range_: "Example"
+        property string ingradients_: "Example"
+    }
+    Component.onCompleted: {Data.assignData();
+        console.log(Data.getValue(Data.getHuntingBow(), "Type"))
+    }
     header: ToolBar {
         width: parent.width
         ToolButton {
@@ -51,6 +65,7 @@ ApplicationWindow {
             }
             ScrollIndicator.vertical: ScrollIndicator { }
         }
+
     }
     StackView {
         id: stackView
@@ -63,6 +78,27 @@ ApplicationWindow {
                 verticalAlignment: Label.AlignVCenter
                 wrapMode: Label.Wrap
                 width: parent.width
+            }
+            Column {
+                width: parent.width
+                height: 200
+                spacing: 0
+                y: 300;
+            DataDelegate {
+                width: parent.width; height: 50
+                text1: "Type:"
+                text2: "Ranged Weapons"
+            }
+            DataDelegate {
+                width: parent.width; height: 50
+                text1: "Type:"
+                text2: "Ranged Weapons"
+            }
+            DataDelegate {
+                width: parent.width; height: 50
+                text1: "Type:"
+                text2: "Ranged Weapons"
+            }
             }
         }
     }

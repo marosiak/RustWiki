@@ -1,5 +1,6 @@
 import QtQuick 2.6
 import QtQuick.Controls 2.0
+import "../json"
 
 Pane {
     id: pane
@@ -14,16 +15,25 @@ Pane {
             wrapMode: Label.Wrap
             horizontalAlignment: Qt.AlignHCenter
             verticalAlignment: Qt.AlignVCenter
-            text: "Ranged Weapons"
+            text: "Weapons"
         }
         ListView {
             width: parent.width
             height: 420
-            model: ["Hunting bow", "Bolt action rifle", "Assault Rifle", "Pump Shotgun"]
+            model: weapons.model
+            JSONListModel {
+                id: weapons
+                query: "$.guns.rangedweapons[*]"
+                source: "gunsList.txt"
+            }
             delegate: ItemDelegate {
-                text: modelData
+                text: model.name
                 width: parent.width
-                onClicked: console.log("clicked:", modelData)
+                onClicked: {
+                    stackView.replace("qrc:/pages/DataPage.qml")
+                    mainData.ingradients_ = model.ingradients
+                    mainData.image_ = model.image;
+                }
             }
 
             ScrollIndicator.vertical: ScrollIndicator { }
