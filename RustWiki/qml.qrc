@@ -3,7 +3,7 @@
         <file>main.qml</file>
         <file>icons/menu.png</file>
         <file>pages/WeaponsPage.qml</file>
-        <file>pages/DataPage.qml</file>
+        <file>pages/WeaponsDataPage.qml</file>
         <file>json/gunsList.txt</file>
         <file>json/JSONListModel.qml</file>
         <file>json/jsonpath.js</file>

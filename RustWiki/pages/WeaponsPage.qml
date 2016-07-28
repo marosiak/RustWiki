@@ -30,7 +30,7 @@ Pane {
                 text: model.name
                 width: parent.width
                 onClicked: {
-                    stackView.replace("qrc:/pages/DataPage.qml")
+                    stackView.replace("qrc:/pages/WeaponsDataPage.qml")
                     mainData.name_ = model.name
                     mainData.image_ = model.image
                     mainData.type_ = model.type
